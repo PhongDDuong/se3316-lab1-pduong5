@@ -11,7 +11,7 @@ function numSearch(){
     if(uInput!="" && parseInt(uInput) >= 1 && parseInt(uInput) <= 20){
         for (var i = 0; i < pokemon.length && resultCount<5; i++) {
             if(pokemon[i][0].includes(uInput)){
-                result+="#"+pokemon[i][0]+" "+pokemon[i][1]+" | Type: "+pokemon[i][2]+"\n";
+                result+="#0"+pokemon[i][0]+" "+pokemon[i][1]+" | Type: "+pokemon[i][2]+"\n";
                 resultCount++;
             }
         }
@@ -35,7 +35,7 @@ function stringSearch(){
     if(uInput!="" && uInput.length <= 20 && !/[^a-zA-Z]/.test(uInput)){
         for (var i = 0; i < pokemon.length && resultCount<5; i++) {
             if(pokemon[i][1].toLowerCase().includes(uInput)||(pokemon[i][2].toLowerCase().includes(uInput)&&uInput.length>2)){
-                result+="#"+pokemon[i][0]+" "+pokemon[i][1]+" | Type: "+pokemon[i][2]+"\n";
+                result+="#0"+pokemon[i][0]+" "+pokemon[i][1]+" | Type: "+pokemon[i][2]+"\n";
                 resultCount++;
             }
         }
