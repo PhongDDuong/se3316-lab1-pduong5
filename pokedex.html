@@ -6,11 +6,21 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="stylesheet" href="styles.css">
+<script type="text/javascript" src="pokedex.js"></script>
 </head>
 <body>
 <!-- Place your content here -->
 <h1>Pokédex</h1>
-<p>Hello World!</p>
+<form>
+    <label>Number Search</label>
+    <input id="numInput" placeholder="Enter a number">
+    <button onclick="numSearch()">Submit</button>
+    <br>
+    <label>Text Search</label>
+    <input id="stringInput" placeholder="Enter a string">
+    <button onclick="stringSearch()">Submit</button>
+
+</form>
 
 <!-- Embedded JavaScript go here -->
 </body>
