@@ -8,13 +8,17 @@ li{text-align: left; font-size: 14pt; background-color:white}
     background-color: white;
     list-style: none;
     padding: 40px;
+    text-align: center;
 }
 .card-title{
-    font-size: 32px;
+    font-size: 50px;
 }
 .card-subtitle{
-    font-size: 20px;
+    font-size: 35px;
 }
 #pokedex{
     padding-inline-start: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(320px,1fr));
+    grid-gap: 30px;
 }
