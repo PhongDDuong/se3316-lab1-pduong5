@@ -7,7 +7,7 @@ function numSearch(){
     var uInput = document.getElementById("numInput").value;
     let result = "";
     let resultCount = 0;
-    if(uInput!=""){
+    if(uInput!="" && parseInt(uInput) >= 1 && parseInt(uInput) <= 20){
         var arrayLength = pokemon.length;
         for (var i = 0; i < arrayLength && resultCount<5; i++) {
             if(pokemon[i][0].includes(uInput)){
@@ -15,7 +15,12 @@ function numSearch(){
                 resultCount++;
             }
         }
-    alert(result);
+        if(result==""){
+            alert("no results");
+        }
+        else{
+            alert(result);
+        }
     }
     else{
         alert("error")
@@ -27,12 +32,22 @@ function stringSearch(){
     let result = "";
     let resultCount = 0;
 
-    var arrayLength = pokemon.length;
-    for (var i = 0; i < arrayLength && resultCount<5; i++) {
-        if(pokemon[i][1].includes(uInput)||(pokemon[i][2].includes(uInput)&&uInput.length>2)){
-            result+=pokemon[i][1]+"\n";
-            resultCount++;
+    if(uInput!="" && uInput.length <= 20){
+        var arrayLength = pokemon.length;
+        for (var i = 0; i < arrayLength && resultCount<5; i++) {
+            if(pokemon[i][1].includes(uInput)||(pokemon[i][2].includes(uInput)&&uInput.length>2)){
+                result+=pokemon[i][1]+"\n";
+                resultCount++;
+            }
+        }
+        if(result==""){
+            alert("no results");
+        }
+        else{
+            alert(result);
         }
     }
-    alert(result);
+    else{
+        alert("error")
+    }
 }
