@@ -29,8 +29,11 @@ function numSearch(){
 
 function stringSearch(){
     var uInput = document.getElementById("stringInput").value.toLowerCase();//takes in an input from the user and makes it lower case
-    let result = "";
-    
+
+    var node= document.getElementById("search");
+    node.querySelectorAll('*').forEach(n => n.remove())
+
+
     if(uInput!="" && uInput.length <= 20 && !/[^a-zA-Z]/.test(uInput)){//runs as long as the input isn't blank, input is less than 20 characters, and only contains letters
         for (var i = 0; i < pokemon.length; i++) {//iterates through the pokemon list until every pokemon is checked
             if(pokemon[i][1].toLowerCase().includes(uInput)||(pokemon[i][2].toLowerCase().includes(uInput)&&uInput.length>2)){//if string is found in name or typing
@@ -55,25 +58,6 @@ function stringSearch(){
             }
         }
     }
-
-
-    /*if(uInput!="" && uInput.length <= 20 && !/[^a-zA-Z]/.test(uInput)){//runs as long as the input isn't blank, input is less than 20 characters, and only contains letters
-        for (var i = 0; i < pokemon.length && resultCount<5; i++) {//iterates through the pokemon list until either 5 pokemon meet the search criteria or until every pokemon is checked
-            if(pokemon[i][1].toLowerCase().includes(uInput)||(pokemon[i][2].toLowerCase().includes(uInput)&&uInput.length>2)){//if string is found in name or typing
-                result+="#0"+pokemon[i][0]+" "+pokemon[i][1]+" | Type: "+pokemon[i][2]+"\n";//adds the pokemon that meet the criteria
-                resultCount++;
-            }
-        }
-        if(result==""){//if no pokemon meet the criteria
-            alert("no results");
-        }
-        else{//prints results
-            alert(result);
-        }
-    }
-    else{//input does not fulfill the requirements
-        alert("error")
-    }*/
 }
 
 function createAllPokemon(){
