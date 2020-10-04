@@ -27,6 +27,14 @@ function numSearch(){
     }
 }
 
+function myFunction() {
+    var node = document.createElement("LI");
+    var textnode = document.createTextNode("Water");
+    node.appendChild(textnode);
+    document.getElementById("pokedex").appendChild(node);
+}
+
+
 function stringSearch(){
     var uInput = document.getElementById("stringInput").value.toLowerCase();//takes in an input from the user and makes it lower case
     let result = "";
