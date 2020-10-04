@@ -1,6 +1,6 @@
-h1{text-align: center; font-size: 100pt; color:white}
-h2{text-align: left; font-size: 40pt; color:white}
-body{background-color:orangered; margin:0}
+h1{text-align: center; font-size: 100pt; color:white; -webkit-text-stroke-width: 2px; -webkit-text-stroke-color: black}
+h2{text-align: left; font-size: 50pt; color:white; -webkit-text-stroke-width: 2px; -webkit-text-stroke-color: black}
+body{background-color:orangered; margin:10 px}
 label{color:white}
 form{text-align: right}
 li{text-align: left; font-size: 14pt; background-color:white}
@@ -25,6 +25,6 @@ li{text-align: left; font-size: 14pt; background-color:white}
 #search{
     padding-inline-start: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px,1fr));
+    grid-template-columns: repeat(5, minmax(320px,1fr));
     grid-gap: 30px;
 }

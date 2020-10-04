@@ -4,6 +4,16 @@ let pokemon = [["1","Bulbasaur","Grass, Poison"],["2","Ivysaur","Grass, Poison"]
 ["17","Pidgeotto","Normal, Flying"],["18","Pidgeot","Normal, Flying"],["19","Rattata","Normal"],["20","Raticate","Normal"]]
 
 function numSearch(){
+    var node = document.createElement("h2");
+    node.id = "searchHeader";
+    node.textContent =  "Search";
+    var header = document.getElementById("searchHeader"); 
+
+    if(!(document.body.contains(header))){
+        var search = document.getElementById("search");
+        document.body.insertBefore(node, search);
+    }
+    
     var uInput = document.getElementById("numInput").value.toLowerCase();//takes in an input from the user and makes it lower case
 
     var node= document.getElementById("search");
@@ -16,9 +26,22 @@ function numSearch(){
             }
         }
     }
+    else if (uInput==""){
+        header.remove();
+    }
 }
 
 function stringSearch(){
+    var node = document.createElement("h2");
+    node.id = "searchHeader";
+    node.textContent =  "Search";
+    var header = document.getElementById("searchHeader"); 
+
+    if(!(document.body.contains(header))){
+        var search = document.getElementById("search");
+        document.body.insertBefore(node, search);
+    }
+
     var uInput = document.getElementById("stringInput").value.toLowerCase();//takes in an input from the user and makes it lower case
 
     var node= document.getElementById("search");
@@ -27,10 +50,13 @@ function stringSearch(){
 
     if(uInput!="" && uInput.length <= 20 && !/[^a-zA-Z]/.test(uInput)){//runs as long as the input isn't blank, input is less than 20 characters, and only contains letters
         for (var i = 0; i < pokemon.length; i++) {//iterates through the pokemon list until every pokemon is checked
-            if(pokemon[i][1].toLowerCase().includes(uInput)||(pokemon[i][2].toLowerCase().includes(uInput)&&uInput.length>2)){//if string is found in name or typing
+            if(pokemon[i][1].toLowerCase().includes(uInput)){//if string is found in name or typing
                 createPokemon(i,"search");
             }
         }
+    }
+    if (uInput==""){
+        header.remove();
     }
 }
 
