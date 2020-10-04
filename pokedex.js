@@ -34,6 +34,30 @@ function searchPokemon() {
     document.getElementById("search").appendChild(node);
 }
 
+function createPokemon(){
+    for (var i = 0; i < pokemon.length; i++) {
+        var node = document.createElement("li");
+        node.id = pokemon[i][1];
+        node.className ="card";
+
+        var pokeName = document.createElement("p");
+        pokeName.textContent = "#"+pokemon[i][0]+" "+pokemon[i][1];
+        pokeName.className ="card-title";
+
+        var image = document.createElement("img"); 
+        image.src="pokemon/"+(i+1)+".png"
+
+        var desc = document.createElement("p");
+        desc.textContent = "Type: "+pokemon[i][2];
+        desc.className ="card-subtitle";
+
+        document.getElementById("pokedex").appendChild(node);
+        document.getElementById(pokemon[i][1]).appendChild(pokeName);
+        document.getElementById(pokemon[i][1]).appendChild(image);
+        document.getElementById(pokemon[i][1]).appendChild(desc);
+    }
+}
+
 
 function stringSearch(){
     var uInput = document.getElementById("stringInput").value.toLowerCase();//takes in an input from the user and makes it lower case
