@@ -10,21 +10,25 @@
 </head>
 <body>
     <!-- Place your content here -->
-    <h1>Pokédex</h1>
+    <h1>Phong's Pokédex</h1>
 
     <form>
         <label>Number Search</label>
-        <input id="numInput" placeholder="Enter a number">
+        <input id="numInput" placeholder="Enter a number" oninput="searchPokemon()">
         <button onclick="numSearch()">Submit</button>
     </form>
     <br>
     <form>
         <label>Text Search</label>
-        <input id="stringInput" placeholder="Enter a string">
+        <input id="stringInput" placeholder="Enter a string" oninput="searchPokemon()">
         <button onclick="stringSearch()">Submit</button>
     </form>
 
+    <h2>Search</h2>
+    <ul id='search'>
+    </ul>
 
+    <h2>Pokemon</h2>
     <ul id='pokedex'>
         <li class="card">
             <p class="card-title">#001 Bulbsaur</p>
@@ -145,7 +149,6 @@
             <img src="pokemon/20.png">
             <p class="card-subtitle">Type: Normal</p>
         </li>
-        <script>myFunction();</script>
       
     </ul>
 

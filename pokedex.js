@@ -27,11 +27,11 @@ function numSearch(){
     }
 }
 
-function myFunction() {
+function searchPokemon() {
     var node = document.createElement("LI");
     var textnode = document.createTextNode("Water");
     node.appendChild(textnode);
-    document.getElementById("pokedex").appendChild(node);
+    document.getElementById("search").appendChild(node);
 }
 
 
